@@ -2,13 +2,10 @@ const express = require("express");
 const app = express();
 const handlebars = require('express-handlebars');
 
-// Conexão com o banco de dados
-  const Sequelize = require('sequelize');
-  const sequelize = new Sequelize('','root','lo12re34na56@',
-  {
-    host: 'localhost',
-    dialect: 'mysql'
-  });
+
+
+  //ESSE CODIGO TEM VIR NO INICIO DAS ROTASSSSSS
+  app.use(express.urlencoded({extended:false}));
 
  //Routes
     app.get('/cad', function(req, res){
@@ -19,12 +16,11 @@ const handlebars = require('express-handlebars');
 
     app.post('/add', function(req, res){
       //console.log(req.body)
-      res.send(`Texto: ' + ${req.body.content}`)
+      res.send(`Titulo: ${req.body.title} Conteudo: ${req.body.content}`)
     });
 
 //Body Parser
-  //app.use(express.json()); 
-  app.use(express.urlencoded({extended:true}));
+ 
  
 
 //Config
