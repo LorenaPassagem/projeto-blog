@@ -13,5 +13,5 @@ const Post = db.sequelize.define('postagens',
 
 })
 
-// tem que ter nao primeira vez que executa depois apagar
+// tem que ter so primeira vez que executa depois apagar
 //Post.sync({force: true})
